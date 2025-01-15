@@ -22,7 +22,7 @@ for i in range(2, len(problems_info.columns)):
     themes_of_tasks.append(problems_info.columns[i])
 
 submissions_database = pd.read_csv("user_abilities_database.csv")
-submissions_database = submissions_database.iloc[:int(len(submissions_database) * 0.1)]
+submissions_database = submissions_database.iloc[:int(len(submissions_database))]
 submissions_database = submissions_database[~(submissions_database.iloc[:, 4:].eq(0).all(axis=1))]
 submissions_database = submissions_database[submissions_database['task_id'].isin(all_tasks)]
 submissions_database = submissions_database.drop(columns=['ability_37'])
